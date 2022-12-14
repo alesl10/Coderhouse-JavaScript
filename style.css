@@ -1,0 +1,152 @@
+body {
+    background-color: #DFF6FF;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    min-height: 100vh;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  h1, h2, h3, h4, h5, p {
+    color: #256D85;
+  }
+  
+  header {
+    width: 100%;
+    height: 7.2rem;
+  }
+  header .bg-color {
+    background-color: #99d4fc;
+  }
+  header .bg-color div .logo {
+    width: 100%;
+    height: 6.25rem;
+  }
+  header .bg-color div div .search-btn {
+    display: flex;
+  }
+  header .bg-color div div .search-btn .button-color {
+    color: #99d4fc;
+    background-color: #06283D;
+  }
+  
+  footer {
+    width: 100%;
+    bottom: 0px;
+    background-color: white;
+    margin-top: auto;
+  }
+  footer .footer-nav {
+    width: 100%;
+    height: 200px;
+    background-color: #99d4fc;
+  }
+  footer .footer-nav .footer-text {
+    text-align: center;
+    font-size: large;
+    font-style: bold;
+    color: #06283D;
+    width: 100%;
+  }
+  footer .footer-nav .footer-text h1 {
+    color: #DFF6FF;
+  }
+  footer .footer-nav .footer-red-socials {
+    display: flex;
+    justify-content: center;
+  }
+  footer .footer-end {
+    background-color: #ffffff;
+    width: 100%;
+  }
+  footer .footer-end .footer-text {
+    text-align: center;
+    font-size: large;
+    font-style: bold;
+    color: #06283D;
+    width: 100%;
+  }
+  footer .footer-end .wp-footer {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  
+  .articulo {
+    padding: 10px;
+    width: 30%;
+  }
+  
+  .menu-nav li:hover {
+    background-color: rgb(144, 220, 243);
+  }
+  
+  /* media query */
+  @media screen and (max-width: 768px) {
+    body h1 {
+      font-size: 1.5rem;
+    }
+    h2 {
+      font-size: 1rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+    h5 {
+      font-size: 1rem;
+    }
+    .caract-img {
+      display: none;
+    }
+    .wp-footer {
+      display: none;
+    }
+    header {
+      height: 10rem;
+    }
+    .v-line {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 570px) {
+    .Desc-Mayor {
+      display: none;
+    }
+  }
+  
+  /*# sourceMappingURL=style.css.map */
+  .titulo{
+    text-align: center;
+  }
+
+  .card-title{
+    text-align: center;
+  }
+  .cajaMayor{  
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    
+  }
+
+  .imagen{
+    width: 100%;
+  }
+
+  .producto{width: 35rem;
+    border: solid 1px black;
+    text-align: center;
+    margin: 10px;
+  
+    
+    
+  
+  }
