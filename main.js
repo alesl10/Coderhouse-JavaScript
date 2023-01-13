@@ -27,10 +27,11 @@ let contenedorHistorial = document.getElementById("historialUsuarios");
 let historial = document.getElementById("botonHistorial");
 let contenedorUsuario = document.getElementById("usuario");
 
+function cargarProductos(productosElegidos) {
+    productosElegidos.forEach(producto => {
 
-productos.forEach((producto) => {
-    let modelo = document.createElement("div");
-    modelo.innerHTML = `
+        let modelo = document.createElement("div");
+        modelo.innerHTML = `
     <div class="producto">
     <img class="imagen" src=${producto.img} <br>
     <h5 class="card-title">Plantilla: ${producto.plantilla}</h5>
@@ -41,13 +42,35 @@ productos.forEach((producto) => {
     </ul>
     </div>
     `
-    contenedor.append(modelo);
-});
+        contenedor.append(modelo);
+    })
+};
+
+cargarProductos(productos);
+
+let categorias = document.querySelectorAll(".categoria")
+
+categorias.forEach(boton => {
+    boton.addEventListener("click", (e) => {
+        categorias.forEach(boton => boton.classList.remove("activo"));
+        e.currentTarget.classList.add("activo");
+        contenedor.innerHTML = "";
+        
+        let productosfiltrados = productos.filter(producto => producto.material == e.currentTarget.id);
+        
+        if(e.currentTarget.id != "todos"){
+        cargarProductos(productosfiltrados);
+    }else{
+        cargarProductos(productos);
+    };
+
+    })
+})
 
 let botones = document.querySelectorAll(".agregar");
 
 botones.forEach((boton) => {
-    boton.addEventListener("click", () => {
+    boton.addEventListener("click", (e) => {
         const item = productos.find((producto) => producto.id === parseInt(boton.dataset.id))
         carrito.push(item);
 
@@ -71,7 +94,7 @@ iconoCarrito.addEventListener("click", () => {
         totalCarrito += parseInt(precio);
     })
     listaCarrito.innerHTML += `<li id="totalLista">Total: $${totalCarrito}</li>`;
-   
+
     let botonesEliminar = document.querySelectorAll(".eliminar");
 
     botonesEliminar.forEach((boton) => {
@@ -93,6 +116,7 @@ iconoCarrito.addEventListener("click", () => {
 })
 
 formulario.addEventListener("submit", (e) => {
+    contenedorUsuario.innerHTML = "";
     e.preventDefault();
 
     let inputs = e.target.children;
@@ -123,6 +147,8 @@ ${usuario.nombre}
 });
 
 historial.addEventListener("click", () => {
+
+    contenedorHistorial.innerHTML = "";
     let usuariosStorage = JSON.parse(localStorage.getItem("usuariosStorage"));
 
     usuariosStorage.forEach(usuario => {
@@ -135,3 +161,4 @@ historial.addEventListener("click", () => {
         contenedorHistorial.append(historial);
     });
 });
+

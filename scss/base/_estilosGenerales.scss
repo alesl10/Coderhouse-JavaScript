@@ -1,0 +1,20 @@
+@import '../base/variables' ;
+
+    body{ background-color: $color-fondo;
+        
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    
+   img{
+        width: 100%;
+    } 
+    
+    h1, h2, h3, h4, h5, p{
+        color: $color-fuente;
+    }
+    
+    
+    

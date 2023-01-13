@@ -1,0 +1,28 @@
+main {height: 100%;
+    .register-form {
+        border: solid 3px $color-secundario;
+        text-align: center;
+        font-size: large;
+        color: $color-secundario;
+        background-color: #bdd6ee;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .register-title {
+        font-size: xx-large;
+        color: $color-secundario;
+        font-style: bold;
+        text-align: center;
+    }
+
+    div{
+        .FAQ{
+            text-align: center;
+        }
+    }
+}

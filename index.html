@@ -16,11 +16,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
-
-
 </head>
 
 
@@ -28,94 +26,156 @@
 <body>
 
     <!--header-->
-    <header>
+   <header>
 
-        <nav class="navbar navbar-expand-lg bg-color navbar-dark fixed-top">
-            <div class="container-fluid animate__animated animate__rubberBand ">
-                <div><a class="navbar-brand " href="index.html"><img class="img-fluid logo"
-                            src="imagenes/logo_marca_agua-removebg-preview.png" alt="logo tazarpado"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+    <nav class="navbar navbar-expand-lg bg-color navbar-dark fixed-top">
+        <div class="container-fluid animate__animated animate__rubberBand ">
+            <div><a class="navbar-brand " href="index.html"><img class="img-fluid logo"
+                        src="imagenes/logo_marca_agua-removebg-preview.png" alt="logo tazarpado"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Registrate</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Contacto</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#carritoModal">
+                            <i class="bi bi-cart mx-5 " id="carritoContenedor">0</i>
+                        </a>
+                    </li>
+                </ul>
+                <div id="usuario"></div>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!--fin header-->
+
+    <main>
+        <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="imagenes/BANNER-1.jpg" class="d-block w-100" alt="banner-diseños">
                 </div>
-                <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="register.html">Registrate</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Productos
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="products.html">Minorista</a></li>
-                                <li><a class="dropdown-item" href="wholesaler.html">Mayorista</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item disabled" href="#">Tazarpado.ok</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacts.html">Contacto</a>
-                        </li>
-                    </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link text-white" data-bs-toggle="modal" data-bs-target="#carritoModal">
-                                <i class="bi bi-cart mx-5 " id="carritoContenedor">0</i>
-                            </a>
-                        </li>
-                    </ul>
-                    <div id="usuario"></div>
-
+                <div class="carousel-item">
+                    <img src="imagenes/BANNER-2.jpg" class="d-block w-100" alt=".banner-envios">
+                </div>
+                <div class="carousel-item">
+                    <img src="imagenes/BANNER-3.jpg" class="d-block w-100" alt="banner-productos">
                 </div>
             </div>
-        </nav>
-    </header>
-    <!--fin header-->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+        <br>
+        <section class="container-fluid caracteristicas-principales">
+            <h1 class="Titulo-principal">¡Tazas personalizadas!</h1>
+            <br>
+            <div class="row information">
+                <div class="col-md-4">
+                    <img src="imagenes/enviado.png" alt="envios">
+                    <h2>Envios a todo el pais</h2>
+                </div>
+                <div class="col-md-4"><img src="imagenes/tarjeta-de-debito.png" alt="tarjetas">
+                    <h2>Tarjetas de debito y credito</h2>
+                </div>
+                <div class="col-md-4"><img src="imagenes/email.png" alt="email">
+                    <h2>Contactanos por MAIL</h2>
+                </div>
+            </div>
+        </section>
 
-    <h2 class="titulo">Ingrese sus datos</h2>
-    <form id="formulario" class="formulario">
-        <label>Nombre</label>
-        <input type="text">
-        <label>Edad</label>
-        <input type="number">
-        <input type="submit" value="enviar">
-    </form>
-    
-    
-    <h1 class="titulo">Listado de Productos</h1>
-    <div class="cajaMayor" id="contenedor">
-    </div>
-    <div class="modal" tabindex="-1" id="carritoModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Carrito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <section class="container-fluid caracteristicas-tazas ">
+            <div class="row ">
+                <div class="col-md-4 col-sm-4">
+                    <img src="imagenes/homero.jpg" alt="march" class="img-fluid caract-img">
                 </div>
-                <div class="modal-body">
-                    <ul id="listaCarrito"></ul>
+                <div class="text-characteristics col-md-8 col-sm-8">
+                    <img src="imagenes/taza-de-cafe.png" alt="ceramica" class="img-fluid icon-img">
+                    <h2>TAZAS DE CERAMICA</h2>
+                    <h3>Cuidamos cada detalle, por eso elegimos materiales de calidad. Las tazas
+                        son
+                        de cerámica importada, con un brillo digno de comercial de dentífrico.</h3>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Finalizar compra</button>
+            </div>
+
+            <div class="row ">
+                <div class="text-characteristics col-md-8 col-sm-8 ">
+                    <img src="imagenes/microondas.png" alt="microonda" class="img-fluid icon-img">
+                    <h2>APTAS PARA MICROONDAS</h2>
+                    <h3>¿Hervís el agua directamente en el microondas? Es discutible, pero no te
+                        preocupes… con nuestras tazas no tendrás problemas .</h3>
+                </div>
+                <div class="col-md-4 col-sm-4 d-flex justify-content-end">
+                    <img src="imagenes/jefe-gorgory.jpg" alt="gorgory" class="img-fluid caract-img">
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-md-4 col-sm-4 ">
+                    <img src="imagenes/march.jpg" alt="march" class="img-fluid caract-img">
+                </div>
+                <div class="text-characteristics col-md-8 col-sm-8 ">
+                    <img src="imagenes/herramientas-de-diseno.png" alt="diseño" class="img-fluid icon-img">
+                    <h2>DISEÑOS EXCLUSIVOS</h2>
+                    <h3>Tenemos muchos modelos, si no encontrás en las fotos el diseño que
+                        buscás,
+                        consultanos que seguro la tenemos o la diseñamos para vos.</h3>
+                </div>
+            </div>
+        </section>
+        <div class="modal" tabindex="-1" id="carritoModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <ul id="listaCarrito"></ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Finalizar compra</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div id="historialUsuarios">
-        <button id="botonHistorial">Historial de usuarios</button>
-    </div>
 
+    </main>
 
     <!--footer-->
 
@@ -145,18 +205,13 @@
     </footer>
     <!--fin footer-->
 
-    <script src="./main.js"></script>
+<script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
-
 </body>
 
 
