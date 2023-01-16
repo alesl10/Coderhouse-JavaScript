@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -21,13 +21,10 @@
     <link rel="shortcut icon" href="imagenes/favicon.ico" type="image/x-icon">
 </head>
 
-
-
 <body>
 
     <!--header-->
     <header>
-
         <nav class="navbar navbar-expand-lg bg-color navbar-dark fixed-top">
             <div class="container-fluid animate__animated animate__rubberBand ">
                 <div><a class="navbar-brand " href="index.html"><img class="img-fluid logo"
@@ -56,7 +53,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="botonCarrito" href="carrito.html">
-                                <i class="bi bi-cart"></i> Carrito </a><span id="numerito" class="numerito">0</span>
+                                <i class="bi bi-cart"></i> Carrito</a>
                         </li>
                     </ul>
                     <div id="usuario"></div>
@@ -66,54 +63,33 @@
         </nav>
     </header>
     <!--fin header-->
-
-    <h2 class="titulo">Ingrese sus datos</h2>
-    <form id="formulario" class="formulario">
-        <label class="datos">Nombre</label>
-        <input type="text" placeholder="Ingrese su nombre">
-        <label class="datos">Edad</label>
-        <input type="number" placeholder="Ingrese su edad">
-        <input type="submit" value="enviar">
-    </form>
-
-
-    <h1 class="titulo">Listado de Productos</h1>
-    <div>
-        <div class="ListaArticulos">
-            <button class="categoria activo" id="todos"> Todos
-            </button>
-            <button class="categoria" id="ceramica"> Ceramica
-            </button>
-            <button class="categoria" id="polimero"> Polimero
-            </button>
-        </div>
-        <div class="cajaMayor container" id="contenedor">
-            <!-- Se llena con JS -->
-        </div>
+    <div class="boton-volver">
+        <button>
+            <a href="products.html"><i class="bi bi-arrow-left-circle"></i> Seguir comprando</a></button>
     </div>
-    <div class="modal" tabindex="-1" id="carritoModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Carrito</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <ul id="listaCarrito"></ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Finalizar compra</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <h1 class="titulo">Carrito</h1>
 
-    <button id="botonHistorial">Historial de usuarios</button>
-    <div id="historialUsuarios">
+    <div class="cajaMayor container" id="contenedor">
         <!-- Se llena con JS -->
     </div>
-
+    <div class="contenedorCarrito">
+        <h2 id="carrito-vacio" class="carrito-vacio">Tu carrito esta vacio <i class="bi bi-emoji-frown"></i></h2>
+        <div id="carrito-acciones" class="carrito-acciones">
+            <div class="carrito-acciones-izquierda">
+                <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar boton-carrito">Vaciar carrito</button>
+            </div>
+            <div class="carrito-acciones-derecha">
+                <div class="carrito-acciones-total">
+                    <p>Total </p>
+                    <p id="total"> $3000</p>
+                </div>
+                <button class="carrito-acciones-comprar comprar boton-carrito">Comprar ahora</button>
+            </div>
+            <p id="carrito-comprado" class="carrito-comprado">Muchas gracias por tu compra. <i
+                    class="bi bi-emoji-laughing"></i></p>
+        </div>
+    </div>
+    
     <!--footer-->
 
     <footer>
@@ -142,7 +118,7 @@
     </footer>
     <!--fin footer-->
 
-    <script src="./main.js"></script>
+    <script src="./carrito.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>
@@ -152,10 +128,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-
-
 </body>
-
-
 
 </html>

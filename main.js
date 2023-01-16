@@ -1,15 +1,15 @@
 // arreglos
 const productos = [
-    { id: 1, plantilla: 'los simpsons 1', material: 'ceramica', precio: 1000, img: "./imagenes/catalogo/muestra-1.png" },
-    { id: 2, plantilla: 'los simpsons 2', material: 'ceramica', precio: 1100, img: "./imagenes/catalogo/muestra-2.png" },
-    { id: 3, plantilla: 'los simpsons 3', material: 'ceramica', precio: 1000, img: "./imagenes/catalogo/muestra-3.png" },
-    { id: 4, plantilla: 'los simpsons 4', material: 'ceramica', precio: 1250, img: "./imagenes/catalogo/muestra-4.png" },
-    { id: 5, plantilla: 'los simpsons 5', material: 'ceramica', precio: 1500, img: "./imagenes/catalogo/muestra-5.png" },
-    { id: 6, plantilla: 'los simpsons 6', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-6.png" },
-    { id: 7, plantilla: 'los simpsons 7', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-7.png" },
-    { id: 8, plantilla: 'los simpsons 8', material: 'polimero', precio: 500, img: "./imagenes/catalogo/muestra-8.png" },
-    { id: 9, plantilla: 'los simpsons 9', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-9.png" },
-    { id: 10, plantilla: 'los simpsons 10', material: 'polimero', precio: 500, img: "./imagenes/catalogo/muestra-10.png" },
+    { id: "taza-1", plantilla: 'los simpsons 1', material: 'ceramica', precio: 1000, img: "./imagenes/catalogo/muestra-1.png" },
+    { id: "taza-2", plantilla: 'los simpsons 2', material: 'ceramica', precio: 1100, img: "./imagenes/catalogo/muestra-2.png" },
+    { id: "taza-3", plantilla: 'los simpsons 3', material: 'ceramica', precio: 1000, img: "./imagenes/catalogo/muestra-3.png" },
+    { id: "taza-4", plantilla: 'los simpsons 4', material: 'ceramica', precio: 1250, img: "./imagenes/catalogo/muestra-4.png" },
+    { id: "taza-5", plantilla: 'los simpsons 5', material: 'ceramica', precio: 1500, img: "./imagenes/catalogo/muestra-5.png" },
+    { id: "taza-6", plantilla: 'los simpsons 6', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-6.png" },
+    { id: "taza-7", plantilla: 'los simpsons 7', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-7.png" },
+    { id: "taza-8", plantilla: 'los simpsons 8', material: 'polimero', precio: 500, img: "./imagenes/catalogo/muestra-8.png" },
+    { id: "taza-9", plantilla: 'los simpsons 9', material: 'polimero', precio: 800, img: "./imagenes/catalogo/muestra-9.png" },
+    { id: "taza-10", plantilla: 'los simpsons 10', material: 'polimero', precio: 500, img: "./imagenes/catalogo/muestra-10.png" },
 
 ];
 
@@ -17,15 +17,15 @@ const productos = [
 let boton = document.getElementById("boton");
 let contenedor = document.getElementById("contenedor");
 let carrito = localStorage.getItem("storageCarrito") ? JSON.parse(localStorage.getItem("storageCarrito")) : []
-let iconoCarrito = document.getElementById("carritoContenedor");
 let listaCarrito = document.getElementById("listaCarrito")
 let totalCarrito = 0;
-iconoCarrito.innerHTML = carrito.length;
 let usuariosNuevos = [];
 let formulario = document.getElementById("formulario");
 let contenedorHistorial = document.getElementById("historialUsuarios");
 let historial = document.getElementById("botonHistorial");
 let contenedorUsuario = document.getElementById("usuario");
+let botonesAgregar = document.querySelectorAll(".agregar");
+let numerito = document.querySelector("#numerito");
 
 function cargarProductos(productosElegidos) {
     productosElegidos.forEach(producto => {
@@ -38,12 +38,13 @@ function cargarProductos(productosElegidos) {
     <h5 class="card-title">Material: ${producto.material}</h5>
     <h5 class="card-title">Precio: $${producto.precio}</h5>
     <ul class="list-group list-group-flush">
-        <button data-id="${producto.id}" class="btn btn-primary agregar">Agregar al carrito</button>
+        <button id="${producto.id}" class="btn btn-primary agregar">Agregar al carrito</button>
     </ul>
     </div>
     `
         contenedor.append(modelo);
     })
+    actualizarBotonesAgregar();
 };
 
 cargarProductos(productos);
@@ -67,53 +68,49 @@ categorias.forEach(boton => {
     })
 })
 
-let botones = document.querySelectorAll(".agregar");
-
-botones.forEach((boton) => {
-    boton.addEventListener("click", (e) => {
-        const item = productos.find((producto) => producto.id === parseInt(boton.dataset.id))
-        carrito.push(item);
-
-        iconoCarrito.innerHTML = carrito.length;
-        localStorage.setItem("storageCarrito", JSON.stringify(carrito))
+function actualizarBotonesAgregar(){
+    botonesAgregar = document.querySelectorAll(".agregar");
+    
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", agregarCarrito);
     })
-});
+}
+let productosEnCarrito;
 
-// eventos
-iconoCarrito.addEventListener("click", () => {
-    listaCarrito.innerHTML = "";
-    carrito.forEach((producto) => {
-        const { plantilla, precio, img, id } = producto
-        listaCarrito.innerHTML += `
-        <li>
-      <img class="img-carrito" src="${img}" alt="imagen de taza">
-        <p> ${plantilla} Precio: $${precio}</p>
-        <a class="eliminar" data-id="${id}" data-precio="${precio}"> x </a>
-        </li> 
-        `
-        totalCarrito += parseInt(precio);
-    })
-    listaCarrito.innerHTML += `<li id="totalLista">Total: $${totalCarrito}</li>`;
+let productosEnCarritoLs = localStorage.getItem("productos-en-carrito");
 
-    let botonesEliminar = document.querySelectorAll(".eliminar");
 
-    botonesEliminar.forEach((boton) => {
-        boton.addEventListener("click", () => {
-            const item = carrito.find((producto) => producto.id === parseInt(boton.dataset.id));
-            const index = carrito.indexOf(item);
-            if (index > -1) {
-                carrito.splice(index, 1);
-            }
-            totalCarrito -= parseInt(boton.dataset.precio)
-            document.getElementById("totalLista").innerHTML = `Total: $${totalCarrito}`;
-            localStorage.removeItem("storageCarrito");
-            localStorage.setItem("storageCarrito", JSON.stringify(carrito));
-            boton.parentElement.remove();
-            iconoCarrito.innerHTML = carrito.length;
+if(productosEnCarritoLs){
+    productosEnCarrito = JSON.parse(productosEnCarritoLs);
+    actualizarNumerito();
+}else{
+productosEnCarrito = [];
+}
 
-        })
-    })
-})
+function agregarCarrito(e) {
+
+    const idBoton = e.currentTarget.id;
+    const productoAgregado = productos.find(producto => producto.id === idBoton);
+
+    if(productosEnCarrito.some(producto => producto.id === idBoton)){
+const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+productosEnCarrito[index].cantidad++;
+    }else{
+        productoAgregado.cantidad = 1;
+        productosEnCarrito.push(productoAgregado);
+    }
+actualizarNumerito();
+    
+localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnCarrito));
+
+}
+
+function actualizarNumerito (){
+    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numerito.innerHTML = nuevoNumerito;
+}
+
+// USUARIOS
 
 formulario.addEventListener("submit", (e) => {
     contenedorUsuario.innerHTML = "";

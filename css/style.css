@@ -33,6 +33,11 @@ header .bg-color div div .search-btn .button-color {
   background-color: #06283D;
 }
 
+.botonCarrito{
+  color: rgb(114, 97, 3);
+  text-decoration: none;
+}
+
 footer {
   width: 100%;
   bottom: 0px;
@@ -282,6 +287,7 @@ main div .FAQ {
     justify-content: space-between;
     background-color:#99d4fc;
     border-radius: 1rem;
+    gap: 1rem;
 
     
   }
@@ -336,9 +342,109 @@ main div .FAQ {
     text-decoration: solid;
     font-weight: bold;
     color:#06283D;
+    border-top-left-radius: 5rem;
+    border-top-right-radius: 5rem;
+    border: 0px;
   }
 
 .btn{
   border-radius: 1rem;
 }
 
+.boton-volver{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.boton-volver button{
+  background-color: gold;
+  color: white;
+  border: solid 3px blue;
+  border-radius: 2rem;
+}
+
+.boton-volver button a{
+  text-decoration: none;
+  font-size: xx-large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color:#06283D;
+  
+}
+
+/* carrito */
+
+.carrito-producto{
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+background-color:#bdd6ee;
+border-radius: 1rem;
+padding: 0,5rem;
+}
+
+.carrito-producto-imagen{
+  width: 15%;
+  height: 15%;
+  border-radius: 1rem;
+}
+
+.carrito-producto small{
+  font-size: 1.3rem;
+  color:#06283D(121, 88, 4);
+}
+
+.carrito-producto-eliminar{
+  border: 0;
+  background-color: transparent;
+  columns: red;
+  cursor: pointer;
+}
+
+.carrito-acciones{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+
+}
+
+.carrito-acciones-derecha{
+  display: flex;
+  align-items: center;
+
+}
+
+.carrito-acciones-total{
+  display: flex;
+}
+
+.carrito-acciones-total p{
+  padding: .5rem;
+  font-size: 1.5rem;
+
+}
+
+.boton-carrito{
+  border: solid 3px blue;
+  border-radius: 2rem;
+  background-color: gold;
+}
+
+.comprar{
+  background-color: green;
+  text-transform: uppercase;
+  padding: 1rem;
+  color: #ffffff;
+}
+
+.disabled{
+  display: none;
+}
+
+.carrito-vacio{
+  text-align: center;
+}
