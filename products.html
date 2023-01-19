@@ -53,13 +53,15 @@
                             <a class="nav-link" href="contacts.html">Contacto</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="botonCarrito" href="carrito.html">
-                                <i class="bi bi-cart"></i> Carrito </a><span id="numerito" class="numerito">0</span>
-                        </li>
-                    </ul>
-                    <div id="usuario"></div>
+                    <div>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="botonCarrito" href="carrito.html">
+                                    <i class="bi bi-cart"></i> Carrito </a><span id="numerito" class="numerito">0</span>
+                            </li>
+                        </ul>
+                        <div id="usuario"></div>
+                    </div>
 
                 </div>
             </div>
@@ -109,10 +111,15 @@
         </div>
     </div>
 
-    <button id="botonHistorial">Historial de usuarios</button>
+    <button class="botonSocios" id="botonHistorial">Conoce nuestros socios amigos</button>
+
     <div id="historialUsuarios">
+
+        <div id="users" class="socios ">
+        </div>
         <!-- Se llena con JS -->
     </div>
+
 
     <!--footer-->
 
@@ -132,7 +139,7 @@
         </section>
         <div class="footer-end">
             <div class="footer-text">
-                <h5>Copyright 2022 © Tazarpado.ok ! todos los derechos reservados</h5>
+                <h5>Copyright 2023 © Tazarpado.ok ! todos los derechos reservados</h5>
             </div>
             <div class="wp-footer">
                 <a href="https://wa.me/1137623836?text=Hola,%20somos%20tazarpado,%20dejanos%20tu%20mensaje%20y%20nos%20contactamos%20a%20la%20brevedad"
@@ -143,6 +150,7 @@
     <!--fin footer-->
 
     <script src="./main.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>

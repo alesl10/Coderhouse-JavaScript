@@ -1,0 +1,22 @@
+[
+    {
+        "nombre": "Autoservicio Estrella",
+        "direccion": "Bonifacini 3895",
+        "img": "./imagenes/logo-estrella.jpg",
+        "web": "http://www.autoservicestrella.com.ar/"
+    },
+
+    {
+        "nombre": "Santos barriles",
+        "direccion": "Av. Rodríguez Peña 1493",
+        "img": "./imagenes/logo-santosbarriles.jpg",
+        "web": "http://www.santosbarriles.com.ar/"
+    },
+    
+    {
+        "nombre": "La cheve",
+        "direccion": "Av. Rodríguez Peña 2179",
+        "img": "./imagenes/logo-lacheve.jpg",
+        "web": "https://tiendachat.net/lachevebar"
+    }
+]

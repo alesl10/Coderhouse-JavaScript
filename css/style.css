@@ -266,6 +266,7 @@ main div .FAQ {
 }
 
 /*# sourceMappingURL=style.css.map */
+
 .titulo{
     text-align: center;
     text-decoration: underline;
@@ -447,4 +448,53 @@ padding: 0,5rem;
 
 .carrito-vacio{
   text-align: center;
+}
+
+.socios{
+  display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#99d4fc;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+
+.socio{
+  padding: 15px;
+}
+
+.socio img{
+  width: 15%;
+}
+
+.socio a{
+  cursor: pointer;
+}
+
+.contenedorSocio{
+  text-align: center;
+
+}
+
+.buscador{
+  width: 50%;
+  background-color: aliceblue;
+text-transform: uppercase;
+margin: 10px;
+padding: 5px;
+}
+
+.botonSocios{
+  background-color: goldenrod;
+  color: #06283D;
+  border-radius: 1rem;
+  padding: 2px;
+}
+
+.imagenConstruccion{
+  width: 50%;
+  border-radius: 3rem;
 }
